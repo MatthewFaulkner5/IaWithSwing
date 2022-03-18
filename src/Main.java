@@ -1,6 +1,7 @@
 import java.util.Scanner;  // Import the Scanner class
 
 public class Main {
+    FileHandler myHandler = new FileHandler();
     static void Intro(){
         String[] myArray = {"1.Enter Username","2.New Account","3.Exit"};
         Display(myArray);
@@ -14,7 +15,7 @@ public class Main {
             case "2":
                 // code block
                 System.out.println("Bopoemfvg");
-                break;
+                NewAccount();
             case "3":
                 System.out.println("Exitting");
                 System.exit(0);
@@ -28,6 +29,7 @@ public class Main {
         String userName = myInput.nextLine();  // Read user input
         System.out.println("Enter Password");
         String Password = myInput.nextLine();  // Read user input
+        FileHandler.appendLine("\\\\\\\\bex-file-01\\\\studenthome$\\\\16\\\\16Faulkner_M\\\\File01.txt",userName + "," + Password);
 
     }
 
@@ -50,6 +52,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+    Intro();
 
 
 
