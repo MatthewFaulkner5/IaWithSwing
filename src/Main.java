@@ -15,7 +15,7 @@ public class Main {
             case "2":
                 // code block
                 System.out.println("Bopoemfvg");
-                NewAccount();
+                AccountHandler.NewAccount();
             case "3":
                 System.out.println("Exitting");
                 System.exit(0);
@@ -23,17 +23,9 @@ public class Main {
                 System.out.println("Wrong. Exit and try again");
         }
 }
-    static void NewAccount(){
-        Scanner myInput = new Scanner(System.in); // Create Scanner object
-        System.out.println("Enter New Username");
-        String userName = myInput.nextLine();  // Read user input
-        System.out.println("Enter Password");
-        String Password = myInput.nextLine();  // Read user input
-        FileHandler.appendLine("\\\\\\\\bex-file-01\\\\studenthome$\\\\16\\\\16Faulkner_M\\\\File01.txt",userName + "," + Password);
 
-    }
-
-    static void Display(String text[]){
+    public static void Display(String text[]){
+        clearScreen();
         String spaces;
         int spacesnum;
         System.out.println("+============================+");
@@ -49,6 +41,14 @@ public class Main {
         System.out.println("+============================+");
 
     }
+    public static void clearScreen() {
+
+        System.out.print("\033[H\033[2J");
+
+        System.out.flush();
+    }
+
+
 
 
     public static void main(String[] args) {
