@@ -97,7 +97,7 @@ public class FileHandler {
         boolean foundData = false;
 
         for (int i = 0; i < countLines(filename); i++) {
-            FileHandler myFHandler = new FileHandler("\\\\bex-file-01\\studenthome$\\16\\16Faulkner_M\\File04.txt", 21);
+            FileHandler myFHandler = new FileHandler("\\\\bex-file-01\\studenthome$\\16\\16Faulkner_M\\File04.txt", 35);
             if (Objects.equals(SearchData, myFHandler.getRecord(i))) {
                 System.out.println("Record found on line " + i);
                 foundData = true;
