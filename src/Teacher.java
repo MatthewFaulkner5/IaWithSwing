@@ -51,5 +51,3 @@ public class Teacher extends Student {
         //Replaces question
     }
 }
-
-
