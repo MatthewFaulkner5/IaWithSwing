@@ -22,7 +22,7 @@ public class Basic extends JPanel {
         int height = 150;
         //g.setColor(Color.CYAN);
         Toolkit t=Toolkit.getDefaultToolkit();
-        Image i= t.getImage("C:\\Users\\16Faulkner_M\\Documents\\Garfield_The_Cat.png");
+        Image i= t.getImage();
         g.drawImage(i,0,0,this);
     }
 }
