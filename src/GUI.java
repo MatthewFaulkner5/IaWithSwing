@@ -10,22 +10,36 @@ public class GUI extends JPanel implements ActionListener, DocumentListener {
     // canvas for other GUI widgets
     JButton button1;
     JButton button2;
-    public GUI(int width, int height) {
+    JButton button3;
+    AccountHandler Myhandler = new AccountHandler();
+    public GUI(int width, int height, int type) {
         System.out.println("SQUENCE: GUI constructor");
         this.setPreferredSize(new Dimension(width, height));
         setLayout(null);
-        button1 = new JButton("b1");
-        JTextField username = new JTextField();
-        username.setBounds(20,60,200,40);
-        button1.setBounds(0,0, 100, 40);
-        button2 = new JButton("b2");
-        button2.setBounds(120,0, 100, 40);
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        username.getDocument().addDocumentListener(this);
-        add(button1);
-        add(username);
-        add(button2);
+        if (type == 1){
+            button1 = new JButton("Login");
+            button1.setBounds(0,0, 100, 40);
+            button1.addActionListener(this);
+            button2 = new JButton("Sign up");
+            button2.setBounds(120,0, 100, 40);
+            button2.addActionListener(this);
+            button3 = new JButton("Exit");
+            button3.setBounds(240,0, 100, 40);
+            button3.addActionListener(this);
+            add(button1);
+            add(button2);
+            add(button3);
+        }
+        if (type == 2){
+            JTextField username = new JTextField();
+            username.setBounds(20,60,200,40);
+            username.getDocument().addDocumentListener(this);
+            add(username);
+        }
+
+
+
+
     }
 
 
@@ -45,12 +59,12 @@ public class GUI extends JPanel implements ActionListener, DocumentListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        if (e.getActionCommand() == "b1"){
-            System.out.println("THE FIRST BUTTON");
-            Basic myBasic = new Basic(1300,1000);
-        } else{
-            System.out.println("THE SECOND ONE");
-
+        if (e.getActionCommand().equals("Exit")){
+            Myhandler.response = 3;
+        } else if (e.getActionCommand() == "Login"){
+            Myhandler.response = 1;
+        } else if (e.getActionCommand() == "Sign up"){
+            Myhandler.response = 2;
         }
     }
 
