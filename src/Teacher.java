@@ -18,7 +18,7 @@ public class Teacher extends Student {
                 break;
             case "3":
                 AccountHandler myHandler = new AccountHandler();
-                myHandler.Intro();
+                myHandler.IntroMenu();
                 System.exit(0);
             default:
                 System.out.println("Wrong. Exit and try again");

@@ -29,9 +29,8 @@ public class GUI extends JPanel implements ActionListener, DocumentListener {
             add(button1);
             add(button2);
             add(button3);
-        }
-        if (type == 2){
-            JTextField username = new JTextField();
+        }else if (type == 2){
+            JTextField username = new JTextField("Jake");
             username.setBounds(20,60,200,40);
             username.getDocument().addDocumentListener(this);
             add(username);
@@ -60,11 +59,11 @@ public class GUI extends JPanel implements ActionListener, DocumentListener {
 
     public void actionPerformed(ActionEvent e){
         if (e.getActionCommand().equals("Exit")){
-            Myhandler.response = 3;
+            Myhandler.SwitchMenu(3);
         } else if (e.getActionCommand() == "Login"){
-            Myhandler.response = 1;
+            Myhandler.SwitchMenu(1);
         } else if (e.getActionCommand() == "Sign up"){
-            Myhandler.response = 2;
+            Myhandler.SwitchMenu(2);
         }
     }
 
