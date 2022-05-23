@@ -9,6 +9,8 @@ public class AccountHandler {
     FileHandler myHandler = new FileHandler(filename,30);
     JFrame frame = new JFrame("Demo frame");
 
+
+
     public void IntroMenu(){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GUI mygui = new GUI(340,200,1);
@@ -17,21 +19,18 @@ public class AccountHandler {
         frame.setVisible(true);
 
     }
-    public void Disposed(){
-
-    }
     public void SwitchMenu(int num){
 
         response = num;
         if (response == 1) {
-            Disposed();
+
             LoginMenu();
         } else if (response == 2) {
-            frame.dispose();
             NewAccount();
         } else if (response == 3) {
             System.exit(0);
         }
+
     }
 
     public void Display(String text[]){
@@ -53,6 +52,7 @@ public class AccountHandler {
     }
 
     public void NewAccount(){
+
         String[] text = new String[1];
         Scanner myInput = new Scanner(System.in); // Create Scanner object
         text[0] = "Enter Username";Display(text);
@@ -75,12 +75,6 @@ public class AccountHandler {
 
     }
     public void LoginMenu(){
-        JFrame Login = new JFrame("Login");
-        Login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GUI Loggui = new GUI(340,200,2);
-        Login.add(Loggui);
-        Login.pack();
-        Login.setVisible(true);
 
         // Create Scanner object
       // Read user input
